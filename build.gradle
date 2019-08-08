@@ -1,15 +1,13 @@
 
 plugins {
     id 'java'
+    id "org.sonarqube" version "2.7.1"
 }
 
 repositories {
     jcenter()
 }
 
-plugins {
-  id "org.sonarqube" version "2.7.1"
-}
 sonarqube {
     properties {
         property "sonar.sourceEncoding", "UTF-8"
