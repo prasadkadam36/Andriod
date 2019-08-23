@@ -17,4 +17,5 @@ sonarqube {
 dependencies {
     compile 'com.google.guava:guava:23.0'
     testCompile 'junit:junit:4.12'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
 }
