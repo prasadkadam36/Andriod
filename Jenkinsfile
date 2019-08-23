@@ -23,10 +23,7 @@ node ('master'){
               }
           }
       }        
-  stage('Push to Nexus'){
-        def mvnHome = tool name: 'apache-maven-3.5.4', type: 'maven'
-        sh "${mvnHome}/bin/gradle publish"
-   }
+
   
 
    
