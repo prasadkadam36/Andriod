@@ -1,12 +1,32 @@
-
 plugins {
     id 'java'
     id "org.sonarqube" version "2.7.1"
+    id 'maven'
 }
 
 repositories {
     jcenter()
+     maven {
+          url "http://localhost:8081/nexus/content/groups/public"
+    }
 }
+
+artifacts {
+        archives file('path/to/your/apk')
+    }
+
+uploadArchives {
+        repositories{
+            mavenDeployer {
+                repository(url: "url.of_your_nexus_repository.extension") {
+                    authentication(userName: auth['auth.username'], password: auth['auth.password'])
+                }
+                pom.version = "1.0.0"
+                pom.artifactId = "name_you_choose"
+                pom.groupId = "name.you.chose"
+            }
+        }
+    }
 
 sonarqube {
     properties {
