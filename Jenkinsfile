@@ -23,8 +23,8 @@ node ('master'){
               }
           }
       }        
-
-  
-
-   
+stage("Upload to nexus"){
+          def mvnHome = tool name: 'gradle-5.2.1', type: 'gradle'
+          sh "${mvnHome}/bin/gradle upload"
+          }
 }
