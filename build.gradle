@@ -18,12 +18,12 @@ artifacts {
 uploadArchives {
         repositories{
             mavenDeployer {
-                repository(url: "url.of_your_nexus_repository.extension") {
+                repository(url: "http://localhost:8081/nexus/content/repositories/snapshots") {
                     authentication(userName: auth['auth.username'], password: auth['auth.password'])
                 }
                 pom.version = "1.0.0"
-                pom.artifactId = "name_you_choose"
-                pom.groupId = "name.you.chose"
+                pom.artifactId = "com.beesightsoft.caf"
+                pom.groupId = "simple-project"
             }
         }
     }
