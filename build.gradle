@@ -12,7 +12,7 @@ repositories {
 }
 
 artifacts {
-        archives file('path/to/your/apk')
+        archives file('/data/jenkins_work/NAME_OF_THE_BUILD_JOB/artifact/app/build/outputs/apk/app-debug.apk')
     }
 
 uploadArchives {
